@@ -1,4 +1,4 @@
-package SistemaDeCadastro.view;
+package RegistrationSystem.view;
 
 public class ScannerClass
 {

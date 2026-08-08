@@ -1,18 +1,18 @@
-package SistemaDeCadastro.service;
+package RegistrationSystem.service;
 
-import SistemaDeCadastro.model.User;
+import RegistrationSystem.model.User;
 import java.util.List;
-import static SistemaDeCadastro.repository.UserRepository.usuarios;
+import static RegistrationSystem.repository.UserRepository.users;
 
 public class UserService
 {
-    public void salvar(String nome, String gmail, int idade)
+    public void save(String name, String email, int age)
     {
-        User user = new User(nome, gmail, idade);
-        usuarios.add(user);
+        User user = new User(name, email, age);
+        users.add(user);
     }
 
-    public List<User> obterUsuarios() {
-        return usuarios;
+    public List<User> getUsers() {
+        return users;
     }
 }

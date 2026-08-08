@@ -1,15 +1,15 @@
-package SistemaDeCadastro.view;
+package RegistrationSystem.view;
 
-import static SistemaDeCadastro.view.ScannerClass.scanner;
+import static RegistrationSystem.view.ScannerClass.scanner;
 
 public class ChooseOption
 {
-    public int opcao;
+    public int option;
 
-    public void escolherOpcao()
+    public void chooseOption()
     {
-        System.out.print("\nQual opção desejar utilizar: ");
-        opcao = scanner.nextInt();
-        scanner.nextInt();
+        System.out.print("\nWhich option do you want to use: ");
+        option = scanner.nextInt();
+        scanner.nextLine();
     }
 }

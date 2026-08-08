@@ -1,39 +1,40 @@
-package SistemaDeCadastro.model;
+package RegistrationSystem.model;
 
 public class User
 {
-    private String nome, gmail;
-    private int idade;
+    private String name;
+    private String email;
+    private int age;
 
-    public User(String nome, String gmail, int idade)
+    public User(String name, String email, int age)
     {
-        this.nome = nome;
-        this.gmail = gmail;
-        this.idade = idade;
+        this.name = name;
+        this.email = email;
+        this.age = age;
     }
 
-    public String getNome()
+    public String getName()
     {
-        return nome;
+        return name;
     }
-    public String getGmail()
+    public String getEmail()
     {
-        return gmail;
+        return email;
     }
-    public int getIdade()
+    public int getAge()
     {
-        return idade;
+        return age;
     }
-    public void setNome(String nome)
+    public void setName(String name)
     {
-        this.nome = nome;
+        this.name = name;
     }
-    public void setGmail(String gmail)
+    public void setEmail(String email)
     {
-        this.gmail = gmail;
+        this.email = email;
     }
-    public void setIdade(int idade)
+    public void setAge(int age)
     {
-        this.idade = idade;
+        this.age = age;
     }
 }

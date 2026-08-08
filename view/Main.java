@@ -1,59 +1,60 @@
-package SistemaDeCadastro.view;
+package RegistrationSystem.view;
 
-import SistemaDeCadastro.model.User;
-import SistemaDeCadastro.service.UserService;
+import RegistrationSystem.model.User;
+import RegistrationSystem.service.UserService;
 
-import static SistemaDeCadastro.view.ScannerClass.scanner;
+import static RegistrationSystem.view.ScannerClass.scanner;
 
 public class Main {
 
     static void main(String[] args) {
 
-        UserService usuarioServico = new UserService();
-        ChooseOption opcao = new ChooseOption();
+        UserService userService = new UserService();
+        ChooseOption option = new ChooseOption();
 
         do {
-            opcao.escolherOpcao();
+            Menu.showMenu();
+            option.chooseOption();
 
-            switch (opcao.opcao) {
+            switch (option.option) {
 
                 case 1:
-                    System.out.println("\n===== Cadastro =====");
-                    System.out.print("Digite seu nome: ");
-                    String nome = scanner.nextLine();
+                    System.out.println("\n===== Registration =====");
+                    System.out.print("Enter your name: ");
+                    String name = scanner.nextLine();
 
-                    System.out.print("Digite seu gmail: ");
-                    String gmail = scanner.nextLine();
+                    System.out.print("Enter your email: ");
+                    String email = scanner.nextLine();
 
-                    System.out.print("Digite sua idade: ");
-                    int idade = scanner.nextInt();
+                    System.out.print("Enter your age: ");
+                    int age = scanner.nextInt();
                     scanner.nextLine();
 
-                    usuarioServico.salvar(nome, gmail, idade);
-                    System.out.println("✅ Usuário cadastrado com sucesso!\n");
+                    userService.save(name, email, age);
+                    System.out.println("User registered successfully!\n");
                     break;
 
                 case 2:
                     System.out.println("\n===================================================================");
-                    System.out.printf("%-20s | %-30s | %-5s%n", "NOME", "GMAIL", "IDADE");
+                    System.out.printf("%-20s | %-30s | %-5s%n", "NAME", "EMAIL", "AGE");
                     System.out.println("===================================================================");
 
-                    for (User user : usuarioServico.obterUsuarios()) {
-                        System.out.printf("%-20s | %-30s | %-5d%n", user.getNome(), user.getGmail(), user.getIdade());
+                    for (User user : userService.getUsers()) {
+                        System.out.printf("%-20s | %-30s | %-5d%n", user.getName(), user.getEmail(), user.getAge());
                     }
 
                     System.out.println("===================================================================");
                     break;
 
                 case 3:
-                    System.out.println("\nEncerrando o sistema...");
+                    System.out.println("\nClosing system...");
                     break;
 
                 default:
-                    System.out.println("\nOpção inválida. Tente novamente.");
+                    System.out.println("\nInvalid option. Try again.");
                     break;
             }
 
-        } while (opcao.opcao != 3);
+        } while (option.option != 3);
     }
 }
