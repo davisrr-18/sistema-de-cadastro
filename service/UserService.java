@@ -8,6 +8,8 @@ public class UserService
 {
     public boolean save(String name, String email, int age)
     {
+        if (age < 0 || age > 120) { return false; }
+
         User user = new User(name, email, age);
         users.add(user);
     }
