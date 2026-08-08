@@ -12,6 +12,8 @@ public class UserService
 
         User user = new User(name, email, age);
         users.add(user);
+
+        return true;
     }
 
     public List<User> getUsers() {
