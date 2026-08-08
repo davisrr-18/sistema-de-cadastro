@@ -15,4 +15,12 @@ public class UserService
     public List<User> getUsers() {
         return users;
     }
+
+    public void ageValidate(int age)
+    {
+        if (age < 0)
+        {
+            System.out.println("Invalid age");
+        }
+    }
 }
