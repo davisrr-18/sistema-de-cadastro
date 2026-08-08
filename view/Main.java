@@ -31,8 +31,9 @@ public class Main {
                     userService.ageValidate(age);
                     scanner.nextLine();
 
-                    userService.save(name, email, age);
-                    System.out.println("User registered successfully!\n");
+                    if (userService.save(name, email, age)) { System.out.println("User registered successfully!\n"); }
+                    else { System.out.println("User not registered!\n"); }
+
                     break;
 
                 case 2:
