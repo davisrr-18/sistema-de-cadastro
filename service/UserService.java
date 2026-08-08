@@ -6,7 +6,7 @@ import static RegistrationSystem.repository.UserRepository.users;
 
 public class UserService
 {
-    public void save(String name, String email, int age)
+    public boolean save(String name, String email, int age)
     {
         User user = new User(name, email, age);
         users.add(user);
