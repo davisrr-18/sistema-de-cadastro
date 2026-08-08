@@ -1,8 +1,8 @@
 package SistemaDeCadastro.view;
 
-import static SistemaDeCadastro.view.LeitorTeclado.scanner;
+import static SistemaDeCadastro.view.ScannerClass.scanner;
 
-public class EscolherOpcao
+public class ChooseOption
 {
     public int opcao;
 

@@ -1,11 +1,11 @@
 package SistemaDeCadastro.model;
 
-public class Usuario
+public class User
 {
     private String nome, gmail;
     private int idade;
 
-    public Usuario(String nome, String gmail, int idade)
+    public User(String nome, String gmail, int idade)
     {
         this.nome = nome;
         this.gmail = gmail;

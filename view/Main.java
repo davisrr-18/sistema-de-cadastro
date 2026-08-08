@@ -1,16 +1,16 @@
 package SistemaDeCadastro.view;
 
-import SistemaDeCadastro.model.Usuario;
-import SistemaDeCadastro.service.UsuarioServico;
+import SistemaDeCadastro.model.User;
+import SistemaDeCadastro.service.UserService;
 
-import static SistemaDeCadastro.view.LeitorTeclado.scanner;
+import static SistemaDeCadastro.view.ScannerClass.scanner;
 
-public class SistemaDeCadastro {
+public class Main {
 
     static void main(String[] args) {
 
-        UsuarioServico usuarioServico = new UsuarioServico();
-        EscolherOpcao opcao = new EscolherOpcao();
+        UserService usuarioServico = new UserService();
+        ChooseOption opcao = new ChooseOption();
 
         do {
             opcao.escolherOpcao();
@@ -38,7 +38,7 @@ public class SistemaDeCadastro {
                     System.out.printf("%-20s | %-30s | %-5s%n", "NOME", "GMAIL", "IDADE");
                     System.out.println("===================================================================");
 
-                    for (Usuario user : usuarioServico.obterUsuarios()) {
+                    for (User user : usuarioServico.obterUsuarios()) {
                         System.out.printf("%-20s | %-30s | %-5d%n", user.getNome(), user.getGmail(), user.getIdade());
                     }
 
