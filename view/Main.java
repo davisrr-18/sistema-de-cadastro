@@ -28,6 +28,7 @@ public class Main {
 
                     System.out.print("Enter your age: ");
                     int age = scanner.nextInt();
+                    userService.ageValidate(age);
                     scanner.nextLine();
 
                     userService.save(name, email, age);
