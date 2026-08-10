@@ -33,8 +33,25 @@ public class Main {
                     userService.ageValidate(age);
                     scanner.nextLine();
 
-                    if (userService.save(name, email, age)) { System.out.println("User registered successfully!\n"); }
-                    else { System.out.println("User not registered!\n"); }
+                        if (userService.save(name, email, age)) {
+                            System.out.println("User registered successfully!\n");
+                        }
+
+                        else
+                        {
+                            System.out.println("User not registered!\n");
+                        }
+                    }
+
+                    catch (InputMismatchException e)
+                    {
+                        System.out.println("Please enter a valid username and/or age.\n");
+                    }
+
+                    catch (Exception e)
+                    {
+                        throw new RuntimeException(e);
+                    }
 
                     break;
 
