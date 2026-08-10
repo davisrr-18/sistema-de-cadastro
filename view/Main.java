@@ -53,7 +53,8 @@ public class Main {
 
                     catch (Exception e)
                     {
-                        throw new RuntimeException(e);
+                        System.out.println("An unexpected error occurred. Please try again.\n");
+                        scanner.nextLine();
                     }
 
                     break;
