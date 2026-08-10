@@ -3,6 +3,8 @@ package RegistrationSystem.view;
 import RegistrationSystem.model.User;
 import RegistrationSystem.service.UserService;
 
+import java.util.InputMismatchException;
+
 import static RegistrationSystem.view.ScannerClass.scanner;
 
 public class Main {
