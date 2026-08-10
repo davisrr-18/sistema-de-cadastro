@@ -30,10 +30,9 @@ public class Main {
                     System.out.print("Enter your email: ");
                     String email = scanner.nextLine();
 
-                    System.out.print("Enter your age: ");
-                    int age = scanner.nextInt();
-                    userService.ageValidate(age);
-                    scanner.nextLine();
+                        System.out.print("Enter your age: ");
+                        int age = scanner.nextInt();
+                        scanner.nextLine();
 
                         if (userService.save(name, email, age)) {
                             System.out.println("User registered successfully!\n");
