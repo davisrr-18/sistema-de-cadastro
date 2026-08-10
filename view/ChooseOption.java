@@ -1,9 +1,10 @@
 package RegistrationSystem.view;
 
-import static RegistrationSystem.view.ScannerClass.scanner;
+import java.util.Scanner;
 
 public class ChooseOption
 {
+    Scanner scanner = new Scanner(System.in);
     public int option;
 
     public void chooseOption()

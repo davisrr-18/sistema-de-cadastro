@@ -2,7 +2,7 @@ package RegistrationSystem.view;
 
 public class Menu
 {
-    public static void showMenu()
+    public void showMenu()
     {
         System.out.println("===== Registration System =====");
         System.out.println("1 - Register.");
