@@ -27,8 +27,8 @@ public class Main {
                         System.out.print("Enter your name: ");
                         String name = scanner.nextLine();
 
-                    System.out.print("Enter your email: ");
-                    String email = scanner.nextLine();
+                        System.out.print("Enter your email: ");
+                        String email = scanner.nextLine();
 
                         System.out.print("Enter your age: ");
                         int age = scanner.nextInt();
