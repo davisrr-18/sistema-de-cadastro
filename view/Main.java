@@ -48,6 +48,7 @@ public class Main {
                     catch (InputMismatchException e)
                     {
                         System.out.println("Please enter a valid username and/or age.\n");
+                        scanner.nextLine();
                     }
 
                     catch (Exception e)
