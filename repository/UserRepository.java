@@ -9,7 +9,8 @@ public class UserRepository
 {
     private final ArrayList<User> users = new ArrayList<>();
 
-    public List<User> getUsers() {
+    public List<User> getUsers()
+    {
         return users;
     }
 

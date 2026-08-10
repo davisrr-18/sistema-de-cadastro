@@ -1,7 +1,6 @@
 package RegistrationSystem.view;
 
 import RegistrationSystem.model.User;
-import RegistrationSystem.repository.UserRepository;
 import RegistrationSystem.service.UserService;
 
 import java.util.InputMismatchException;
@@ -13,7 +12,6 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        UserRepository userRepository = new UserRepository();
         UserService userService = new UserService();
         ChooseOption option = new ChooseOption();
         Menu menu = new Menu();
@@ -40,7 +38,7 @@ public class Main {
 
                         if (userService.ageValidate(age))
                         {
-                            userRepository.saveUsers(name, email, age);
+                            userService.registerUser(name, email, age);
                             System.out.println("User registered successfully!\n");
                         }
 
@@ -69,7 +67,7 @@ public class Main {
                     System.out.printf("%-20s | %-30s | %-5s%n", "NAME", "EMAIL", "AGE");
                     System.out.println("===================================================================");
 
-                    for (User user : userRepository.getUsers()) {
+                    for (User user : userService.getAllUsers()) {
                         System.out.printf("%-20s | %-30s | %-5d%n", user.getName(), user.getEmail(), user.getAge());
                     }
 
