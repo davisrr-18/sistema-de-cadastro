@@ -84,5 +84,7 @@ public class Main {
             }
 
         } while (option.option != 3);
+
+        scanner.close();
     }
 }
