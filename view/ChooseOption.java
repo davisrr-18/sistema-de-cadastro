@@ -1,4 +1,4 @@
-package RegistrationSystem.view;
+package view;
 
 import java.util.Scanner;
 
