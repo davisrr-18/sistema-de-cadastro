@@ -1,7 +1,6 @@
-package RegistrationSystem.view;
+package view;
 
-import RegistrationSystem.model.User;
-import RegistrationSystem.service.UserService;
+import service.UserService;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -67,8 +66,8 @@ public class Main {
                     System.out.printf("%-20s | %-30s | %-5s%n", "NAME", "EMAIL", "AGE");
                     System.out.println("===================================================================");
 
-                    for (User user : userService.getAllUsers()) {
-                        System.out.printf("%-20s | %-30s | %-5d%n", user.getName(), user.getEmail(), user.getAge());
+                    for (var user : userService.getAllUsers()) {
+                        System.out.printf("%-20s | %-30s | %-5d%n", user.name(), user.email(), user.age());
                     }
 
                     System.out.println("===================================================================");

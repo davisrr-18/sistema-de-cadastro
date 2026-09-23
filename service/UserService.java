@@ -1,7 +1,6 @@
-package RegistrationSystem.service;
+package service;
 
-import RegistrationSystem.model.User;
-import RegistrationSystem.repository.UserRepository;
+import repository.UserRepository;
 
 import java.util.List;
 
@@ -11,9 +10,7 @@ public class UserService
 
     public boolean ageValidate(int age)
     {
-        if (age < 0 || age > 120) { return false; }
-
-        return true;
+        return age >= 0 && age <= 120;
     }
 
     public boolean registerUser(String name, String email, int age)
@@ -24,7 +21,7 @@ public class UserService
         return true;
     }
 
-    public List<User> getAllUsers()
+    public List<UserRepository.UserData> getAllUsers()
     {
         return userRepository.getUsers();
     }

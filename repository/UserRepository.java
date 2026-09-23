@@ -1,17 +1,21 @@
-package RegistrationSystem.repository;
+package repository;
 
-import RegistrationSystem.model.User;
+import model.User;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class UserRepository
 {
+    public record UserData(String name, String email, int age) { }
+
     private final ArrayList<User> users = new ArrayList<>();
 
-    public List<User> getUsers()
+    public List<UserData> getUsers()
     {
-        return users;
+        return users.stream()
+                .map(user -> new UserData(user.name(), user.email(), user.age()))
+                .toList();
     }
 
     public void addUser(User user)
