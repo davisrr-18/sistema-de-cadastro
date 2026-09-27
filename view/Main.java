@@ -1,26 +1,31 @@
 package view;
 
-import service.UserService;
-
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import service.UserService;
 
 public class Main {
 
-    static void main(String[] args) {
+    static void main(String[] args) 
+    {
 
-        try (Scanner scanner = new Scanner(System.in)) {
+        try (Scanner scanner = new Scanner(System.in)) 
+        {
             UserService userService = new UserService();
             ChooseOption option = new ChooseOption();
             Menu menu = new Menu();
 
-            do {
+            do 
+            {
                 menu.showMenu();
                 option.chooseOption();
 
-                switch (option.option) {
-                    case 1 -> {
-                        try {
+                switch (option.option) 
+                {
+                    case 1 -> 
+                    {
+                        try 
+                        {
                             System.out.println("\n===== Registration =====");
                             System.out.print("Enter your name: ");
                             String name = scanner.nextLine();
@@ -35,28 +40,41 @@ public class Main {
                             if (userService.ageValidate(age)) {
                                 userService.registerUser(name, email, age);
                                 System.out.println("User registered successfully!\n");
-                            } else {
+                            }
+
+                            else 
+                            {
                                 System.out.println("User not registered!\n");
                             }
-                        } catch (InputMismatchException e) {
+                        } 
+
+                        catch (InputMismatchException e) 
+                        {
                             System.out.println("Please enter a valid username and/or age.\n");
                             scanner.nextLine();
-                        } catch (Exception e) {
+                        }
+
+                        catch (Exception e) 
+                        {
                             System.out.println("An unexpected error occurred. Please try again.\n");
                             scanner.nextLine();
                         }
                     }
-                    case 2 -> {
+
+                    case 2 -> 
+                    {
                         System.out.println("\n===================================================================");
                         System.out.printf("%-20s | %-30s | %-5s%n", "NAME", "EMAIL", "AGE");
                         System.out.println("===================================================================");
 
-                        for (var user : userService.getAllUsers()) {
+                        for (var user : userService.getAllUsers()) 
+                        {
                             System.out.printf("%-20s | %-30s | %-5d%n", user.name(), user.email(), user.age());
                         }
 
                         System.out.println("===================================================================");
                     }
+
                     case 3 -> System.out.println("\nClosing system...");
                     default -> System.out.println("\nInvalid option. Try again.");
                 }
