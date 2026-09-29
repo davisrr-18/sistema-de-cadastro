@@ -6,7 +6,7 @@ import java.util.List;
 
 public class UserService
 {
-    UserRepository userRepository = new UserRepository();
+    private final UserRepository userRepository = new UserRepository();
 
     public boolean ageValidate(int age)
     {
@@ -24,5 +24,24 @@ public class UserService
     public List<UserRepository.UserData> getAllUsers()
     {
         return userRepository.getUsers();
+    }
+
+    public boolean updateUser(int id, String name, String email, int age)
+    {
+        if (!ageValidate(age)) { return false; }
+
+        return userRepository.updateUser(id, name, email, age);
+    }
+
+    public boolean deleteUser(int id)
+    {
+        return userRepository.deleteUser(id);
+    }
+
+    public List<UserRepository.UserData> searchUsersByName(String term)
+    {
+        if (term == null || term.isBlank()) { return List.of(); }
+
+        return userRepository.searchByName(term.trim());
     }
 }
