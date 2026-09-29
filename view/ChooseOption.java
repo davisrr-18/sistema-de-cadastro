@@ -1,16 +1,32 @@
 package view;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ChooseOption
 {
-    Scanner scanner = new Scanner(System.in);
+    private final Scanner scanner;
     public int option;
+
+    public ChooseOption(Scanner scanner)
+    {
+        this.scanner = scanner;
+    }
 
     public void chooseOption()
     {
         System.out.print("\nWhich option do you want to use: ");
-        option = scanner.nextInt();
+
+        try
+        {
+            option = scanner.nextInt();
+        }
+
+        catch (InputMismatchException e)
+        {
+            option = -1;
+        }
+
         scanner.nextLine();
     }
 }
